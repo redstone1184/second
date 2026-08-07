@@ -1,0 +1,125 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Shop</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="bg-zinc-950 text-zinc-100 min-h-screen p-4 sm:p-8">
+
+    <div class="max-w-6xl mx-auto space-y-6">
+      
+      <!-- Top Bar Header -->
+      <header class="flex flex-col sm:flex-row justify-between items-center bg-zinc-900 border-2 border-emerald-500/40 p-4 rounded-xl shadow-xl gap-4">
+        <div>
+          <h1 class="font-pixel text-emerald-400 text-lg sm:text-xl uppercase">📦 Item Rental Hub</h1>
+          <p class="text-xs text-zinc-400 mt-1">Multi-item rental with custom daily and hourly rates</p>
+        </div>
+        <div class="bg-zinc-950 border border-zinc-800 px-4 py-2 rounded-lg text-right">
+          <span class="text-xs text-zinc-400 block">Current Cart Total</span>
+          <span id="header-total" class="font-mono font-bold text-emerald-400 text-lg">$0.00</span>
+        </div>
+      </header>
+
+      <!-- Main Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- LEFT COLUMN: Catalog (6 Cols) -->
+        <section class="lg:col-span-6 bg-zinc-900 border border-zinc-800 rounded-xl p-5 space-y-4">
+          <h2 class="text-xs uppercase tracking-wider text-zinc-400 font-semibold flex items-center gap-2">
+            <span>📦</span> Available Items
+          </h2>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="catalog-grid">
+            <!-- Catalog items dynamically populated by script.js -->
+          </div>
+        </section>
+
+        <!-- RIGHT COLUMN: Cart & Summary (6 Cols) -->
+        <section class="lg:col-span-6 bg-zinc-900 border border-zinc-800 rounded-xl p-5 flex flex-col justify-between">
+          <div>
+            <!-- Cart Header -->
+            <div class="flex justify-between items-center border-b border-zinc-800 pb-3 mb-4">
+              <h2 class="text-xs uppercase tracking-wider text-zinc-400 font-semibold flex items-center gap-2">
+                <span>🛒</span> Rental Cart
+              </h2>
+              <span id="cart-count-badge" class="bg-emerald-950 text-emerald-400 border border-emerald-500/30 text-xs px-2 py-0.5 rounded-full font-mono">0 Items</span>
+            </div>
+
+            <!-- Active Cart Item List -->
+            <div id="cart-items-container" class="space-y-3 max-h-[360px] overflow-y-auto custom-scroll pr-1">
+              <!-- Dynamic Cart Items Injected Here -->
+            </div>
+          </div>
+
+          <!-- Order Summary & Discount Controls -->
+          <div class="mt-6 pt-4 border-t border-zinc-800 space-y-4">
+            
+            <!-- Discount Slider -->
+            <div class="bg-zinc-950 p-3.5 rounded-lg border border-zinc-800 space-y-1.5">
+              <div class="flex justify-between items-center">
+                <label for="global-discount-slider" class="text-xs uppercase tracking-wider text-zinc-300 font-semibold flex items-center gap-1.5">
+                  <span>🏷️</span> Storewide Discount:
+                </label>
+                <span id="discount-slider-display" class="text-sm font-bold text-teal-400 font-mono">10% Off</span>
+              </div>
+              <input 
+                type="range" 
+                id="global-discount-slider" 
+                min="0" 
+                max="20" 
+                step="5" 
+                value="10" 
+                class="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-teal-400"
+              >
+              <div class="flex justify-between text-[10px] text-zinc-500 font-mono">
+                <span>0%</span>
+                <span>10%</span>
+                <span>20% Max</span>
+              </div>
+            </div>
+
+            <!-- Pricing Breakdown -->
+            <div class="bg-zinc-950/80 rounded-lg p-3.5 space-y-2 border border-zinc-800/80 text-xs">
+              <div class="flex justify-between text-zinc-400">
+                <span>Gross Rental Subtotal:</span>
+                <span id="subtotal-val" class="font-mono text-zinc-200">$0.00</span>
+              </div>
+              <div class="flex justify-between text-teal-400">
+                <span>Discount Applied:</span>
+                <span id="discount-val" class="font-mono">-$0.00</span>
+              </div>
+              <hr class="border-zinc-800 my-2">
+              <div class="flex justify-between items-center text-sm font-bold">
+                <span class="uppercase text-zinc-200">Final Total:</span>
+                <span id="final-total-val" class="text-lg font-mono text-emerald-400">$0.00</span>
+              </div>
+            </div>
+
+            <!-- Checkout Button -->
+            <button 
+              id="checkout-btn"
+              disabled
+              class="w-full py-3 bg-emerald-600 disabled:bg-zinc-800 disabled:text-zinc-600 hover:bg-emerald-500 text-zinc-950 font-pixel text-xs uppercase tracking-wider rounded-lg transition font-bold shadow-lg shadow-emerald-900/20"
+            >
+              Confirm Rental
+            </button>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Custom JavaScript File -->
+    <script src="script.js"></script>
+  </body>
+  </html>
