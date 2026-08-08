@@ -4,10 +4,11 @@
 const catalog = [
   { id: 'item1', name: 'GORB', dailyRate: 100000, hourlyRate: 12000, icon: '📦', category: 'Category A' },
   { id: 'item2', name: 'SunBloom', dailyRate: 25000, hourlyRate: 7000, icon: '📦', category: 'Category A' },
-  { id: 'item3', name: 'Blaff/Gaunt/Soul/Luma', dailyRate: 30000, hourlyRate: 10000, icon: '📦', category: 'Category B' },
-  { id: 'item4', name: 'Black Pearl', dailyRate: 13000, hourlyRate: 5000, icon: '📦', category: 'Category B' },
-  { id: 'item5', name: 'Placeholder Item 5', dailyRate: 8.00, hourlyRate: 0.50, icon: '📦', category: 'Category C' },
-  { id: 'item6', name: 'Placeholder Item 6', dailyRate: 12.00, hourlyRate: 0.80, icon: '📦', category: 'Category C' }
+  { id: 'item3', name: 'Blaff/Gaunt/Soul/Luma/luma wings', dailyRate: 30000, hourlyRate: 10000, icon: '📦', category: 'Category B' },
+  { id: 'item4', name: 'Black Pearl/Eno gem', dailyRate: 13000, hourlyRate: 5000, icon: '📦', category: 'Category B' },
+  { id: 'item5', name: 'Prismatic w EVO Boots ', dailyRate: 15000, hourlyRate: 5000, icon: '📦', category: 'Category C' },
+  { id: 'item6', name: 'Fruits', dailyRate: 80000, hourlyRate: 10000, icon: '📦', category: 'Category C' },
+  { id: 'item7', name: 'palceholder', dailyRate: 1, hourlyRate: 1, icon: '📦', category: 'Category D' }
 ];
 
 let cart = []; // Stores cart items: { id, days, hours }
