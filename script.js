@@ -8,9 +8,8 @@ const catalog = [
   { id: 'item4', name: 'Black Pearl/Eno gem', dailyRate: 13000, hourlyRate: 5000, icon: '📦', category: 'Category B' },
   { id: 'item5', name: 'Prismatic w EVO Boots ', dailyRate: 15000, hourlyRate: 5000, icon: '📦', category: 'Category C' },
   { id: 'item6', name: 'Fruits', dailyRate: 80000, hourlyRate: 10000, icon: '📦', category: 'Category C' },
-  { id: 'item7', name: 'palceholder', dailyRate: 1, hourlyRate: 1, icon: '📦', category: 'Category D' }
+  { id: 'item7', name: 'Pickaxes', dailyRate: 20000, hourlyRate: 5000, icon: '📦', category: 'Category D' }
 ];
-
 let cart = []; // Stores cart items: { id, days, hours }
 
 // DOM Elements
